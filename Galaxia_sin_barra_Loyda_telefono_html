@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1.0,
+maximum-scale=1.0,
+user-scalable=no">
+
+<title>Un pequeño universo para Loyda 🌌💜</title>
+
+<style>
+
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#03000b;
+    color:white;
+}
+
+
+/* =========================
+   PANTALLA INICIAL
+========================= */
+
+#inicio{
+    position:fixed;
+    inset:0;
+    z-index:100;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle at 50% 40%,
+        #382060 0%,
+        #160927 35%,
+        #05000d 75%,
+        #010006 100%
+    );
+
+    transition:1s;
+}
+
+.inicio{
+    width:90%;
+    max-width:400px;
+}
+
+.inicio .icono{
+    font-size:75px;
+    margin-bottom:15px;
+
+    animation:
+    flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+
+.inicio h1{
+    font-size:42px;
+    margin-bottom:12px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #9c8cff,
+        #ffffff,
+        #ff8bd4,
+        #9c8cff
+    );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    color:transparent;
+
+    animation:colores 5s infinite;
+}
+
+@keyframes colores{
+
+    0%{
+        background-position:0%;
+    }
+
+    50%{
+        background-position:100%;
+    }
+
+    100%{
+        background-position:0%;
+    }
+
+}
+
+.inicio p{
+    color:#d9cce8;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.entrar{
+    border:none;
+    border-radius:50px;
+
+    padding:15px 28px;
+
+    font-size:16px;
+    font-weight:bold;
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #715cff,
+        #d34caa
+    );
+
+    box-shadow:
+    0 0 25px rgba(130,90,255,.4);
+
+    cursor:pointer;
+}
+
+
+/* =========================
+   GALAXIA
+========================= */
+
+#galaxia{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        ellipse at center,
+        #28134d 0%,
+        #100523 35%,
+        #04000d 70%,
+        #010005 100%
+    );
+}
+
+
+/* =========================
+   NEBULOSAS
+========================= */
+
+.nebulosa{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(50px);
+    pointer-events:none;
+    opacity:.35;
+}
+
+.n1{
+    width:350px;
+    height:180px;
+    background:#7d3cff;
+    top:5%;
+    left:-120px;
+    transform:rotate(25deg);
+}
+
+.n2{
+    width:350px;
+    height:200px;
+    background:#d62991;
+    bottom:5%;
+    right:-130px;
+    transform:rotate(-20deg);
+}
+
+.n3{
+    width:280px;
+    height:150px;
+    background:#315eff;
+    top:55%;
+    left:25%;
+    opacity:.2;
+}
+
+
+/* =========================
+   ESTRELLAS
+========================= */
+
+#estrellas{
+    position:absolute;
+    inset:0;
+}
+
+.estrella{
+    position:absolute;
+    background:white;
+    border-radius:50%;
+
+    box-shadow:
+    0 0 7px white;
+
+    animation:
+    brillar 2s infinite alternate;
+}
+
+@keyframes brillar{
+
+    from{
+        opacity:.15;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+
+/* =========================
+   GALAXIA ESPIRAL
+========================= */
+
+.espiral{
+
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    top:50%;
+    left:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(255,255,255,.9) 0%,
+        rgba(255,180,235,.55) 4%,
+        rgba(153,102,255,.35) 12%,
+        rgba(70,40,160,.15) 35%,
+        transparent 68%
+    );
+
+    box-shadow:
+    0 0 80px rgba(135,80,255,.25);
+
+    animation:
+    girar 45s linear infinite;
+}
+
+@keyframes girar{
+
+    from{
+        transform:
+        translate(-50%,-50%)
+        rotate(0deg);
+    }
+
+    to{
+        transform:
+        translate(-50%,-50%)
+        rotate(360deg);
+    }
+
+}
+
+.brazo{
+
+    position:absolute;
+
+    width:85%;
+    height:13%;
+
+    top:43%;
+    left:7.5%;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(168,105,255,.45),
+        rgba(255,105,210,.5),
+        transparent
+    );
+
+    filter:blur(9px);
+}
+
+.b1{
+    transform:rotate(25deg);
+}
+
+.b2{
+    transform:rotate(115deg);
+}
+
+.b3{
+    transform:rotate(205deg);
+}
+
+.b4{
+    transform:rotate(295deg);
+}
+
+
+/* =========================
+   PLANETAS
+========================= */
+
+.planeta{
+
+    position:absolute;
+
+    border-radius:50%;
+}
+
+.p1{
+
+    width:90px;
+    height:90px;
+
+    top:10%;
+    right:8%;
+
+    background:
+    radial-gradient(
+        circle at 30% 25%,
+        #ffe4f7,
+        #e46bbb 35%,
+        #68277f 75%,
+        #150622
+    );
+
+    box-shadow:
+    0 0 25px #d85db6;
+
+    animation:
+    flotar 5s infinite;
+}
+
+.p1::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:125px;
+    height:35px;
+
+    left:-18px;
+    top:28px;
+
+    border:
+    3px solid
+    rgba(255,200,240,.6);
+
+    border-radius:50%;
+
+    transform:rotate(-15deg);
+}
+
+.p2{
+
+    width:55px;
+    height:55px;
+
+    bottom:13%;
+    left:7%;
+
+    background:
+    radial-gradient(
+        circle at 30% 25%,
+        #d0e4ff,
+        #6274df 40%,
+        #10184f
+    );
+
+    box-shadow:
+    0 0 20px #596cff;
+
+    animation:
+    flotar 6s infinite reverse;
+}
+
+
+/* =========================
+   TARJETA
+========================= */
+
+.tarjeta{
+
+    position:absolute;
+
+    z-index:20;
+
+    width:88%;
+    max-width:420px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+    padding:25px 20px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:
+    rgba(8,3,22,.70);
+
+    border:
+    1px solid
+    rgba(190,160,255,.25);
+
+    backdrop-filter:
+    blur(14px);
+
+    box-shadow:
+    0 0 35px
+    rgba(100,60,180,.18);
+}
+
+.icono-tarjeta{
+
+    font-size:45px;
+
+    margin-bottom:5px;
+}
+
+.tarjeta h2{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+    color:#eee;
+}
+
+.tarjeta p{
+
+    color:#d4cce0;
+
+    line-height:1.65;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.botones{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.btn{
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:13px;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    background:
+    linear-gradient(
+        135deg,
+        #6454e8,
+        #a7469d
+    );
+
+    box-shadow:
+    0 0 15px
+    rgba(120,80,220,.25);
+
+    transition:.2s;
+
+    cursor:pointer;
+}
+
+.btn:active{
+
+    transform:scale(.95);
+}
+
+
+/* =========================
+   MENSAJE
+========================= */
+
+.mensaje{
+
+    display:none;
+
+    margin-top:18px;
+
+    padding:16px;
+
+    border-radius:18px;
+
+    background:
+    rgba(120,80,180,.12);
+
+    border:
+    1px solid
+    rgba(170,140,255,.2);
+
+    color:#ddd3e8;
+
+    line-height:1.7;
+
+    font-size:15px;
+}
+
+.mensaje.mostrar{
+
+    display:block;
+
+    animation:
+    aparecer .5s ease;
+}
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =========================
+   ESTRELLAS FLOTANTES
+========================= */
+
+.corazon{
+
+    position:absolute;
+
+    z-index:5;
+
+    animation:
+    subir linear infinite;
+
+    pointer-events:none;
+}
+
+@keyframes subir{
+
+    from{
+        transform:
+        translateY(110vh);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.9;
+    }
+
+    to{
+        transform:
+        translateY(-100px)
+        rotate(360deg);
+
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   EXPLOSIÓN
+========================= */
+
+.particula{
+
+    position:absolute;
+
+    z-index:100;
+
+    pointer-events:none;
+
+    font-size:22px;
+
+    animation:
+    explotar 1s forwards;
+}
+
+@keyframes explotar{
+
+    from{
+        transform:scale(.3);
+        opacity:1;
+    }
+
+    to{
+        transform:
+        translate(
+            var(--x),
+            var(--y)
+        )
+        scale(1.8);
+
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   TEXTO FINAL
+========================= */
+
+.final{
+
+    position:absolute;
+
+    bottom:10px;
+
+    left:0;
+
+    width:100%;
+
+    text-align:center;
+
+    color:
+    rgba(220,210,235,.55);
+
+    font-size:11px;
+
+    z-index:25;
+}
+
+
+/* ===== AJUSTES PARA CELULARES ===== */
+html, body {
+    min-height: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+}
+
+#galaxia {
+    min-height: 100dvh;
+    height: 100dvh;
+}
+
+.tarjeta {
+    width: min(88%, 420px);
+    max-height: 82dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 20px 16px;
+}
+
+.tarjeta p {
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.mensaje {
+    font-size: 14px;
+    line-height: 1.55;
+    max-height: 38dvh;
+    overflow-y: auto;
+}
+
+.inicio {
+    width: min(90%, 400px);
+    padding: 0 8px;
+}
+
+.inicio h1 {
+    font-size: clamp(30px, 10vw, 42px);
+}
+
+.inicio p {
+    font-size: 15px;
+}
+
+.espiral {
+    width: min(430px, 105vw);
+    height: min(430px, 105vw);
+}
+
+@media (max-width: 480px) {
+    .tarjeta {
+        top: 48%;
+        width: 90%;
+        max-height: 80dvh;
+        border-radius: 22px;
+    }
+
+    .tarjeta h2 {
+        font-size: 28px;
+    }
+
+    .icono-tarjeta {
+        font-size: 38px;
+    }
+
+    .btn, .entrar {
+        min-height: 46px;
+        font-size: 14px;
+    }
+
+    .p1 {
+        width: 62px;
+        height: 62px;
+        top: 6%;
+        right: 5%;
+    }
+
+    .p1::after {
+        width: 88px;
+        height: 25px;
+        left: -13px;
+        top: 19px;
+    }
+
+    .p2 {
+        width: 42px;
+        height: 42px;
+        bottom: 8%;
+        left: 5%;
+    }
+
+    .final {
+        bottom: max(7px, env(safe-area-inset-bottom));
+        padding: 0 12px;
+        font-size: 10px;
+    }
+}
+
+@media (max-height: 700px) {
+    .tarjeta {
+        max-height: 76dvh;
+        padding: 15px 14px;
+    }
+
+    .tarjeta h2 {
+        font-size: 25px;
+        margin-bottom: 6px;
+    }
+
+    .tarjeta p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .botones {
+        margin-top: 12px;
+        gap: 7px;
+    }
+
+    .mensaje {
+        margin-top: 10px;
+        padding: 12px;
+        max-height: 30dvh;
+    }
+}
+
+/* Evita que el teclado o el navegador desplacen elementos de forma extraña */
+button {
+    -webkit-appearance: none;
+    appearance: none;
+    user-select: none;
+}
+
+
+/* Ocultar las barras de desplazamiento sin quitar el desplazamiento */
+.tarjeta,
+.mensaje {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.tarjeta::-webkit-scrollbar,
+.mensaje::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     PANTALLA INICIAL
+========================= -->
+
+<section id="inicio">
+
+    <div class="inicio">
+
+        <div class="icono">
+            🌌
+        </div>
+
+        <h1>
+            Para Loyda 💜
+        </h1>
+
+        <p>
+            Hay personas que hacen un lugar
+            un poco más bonito simplemente estando.
+            <br><br>
+            Y esta pequeña galaxia está dedicada
+            especialmente para ti, Loyda. 🌌✨
+        </p>
+
+        <button
+            class="entrar"
+            onclick="entrar()">
+
+            ✨ Descubre tu universo
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALAXIA
+========================= -->
+
+<main id="galaxia">
+
+
+    <!-- NEBULOSAS -->
+
+    <div class="nebulosa n1"></div>
+    <div class="nebulosa n2"></div>
+    <div class="nebulosa n3"></div>
+
+
+    <!-- GALAXIA CENTRAL -->
+
+    <div class="espiral">
+
+        <div class="brazo b1"></div>
+        <div class="brazo b2"></div>
+        <div class="brazo b3"></div>
+        <div class="brazo b4"></div>
+
+    </div>
+
+
+    <!-- PLANETAS -->
+
+    <div class="planeta p1"></div>
+    <div class="planeta p2"></div>
+
+
+    <!-- ESTRELLAS -->
+
+    <div id="estrellas"></div>
+
+
+    <!-- ESTRELLAS FLOTANTES -->
+
+    <div
+        class="corazon"
+        style="
+        left:5%;
+        animation-duration:9s;
+        font-size:18px;
+        ">
+        ✨
+    </div>
+
+
+    <div
+        class="corazon"
+        style="
+        left:20%;
+        animation-duration:12s;
+        animation-delay:2s;
+        font-size:20px;
+        ">
+        💫
+    </div>
+
+
+    <div
+        class="corazon"
+        style="
+        left:38%;
+        animation-duration:10s;
+        animation-delay:4s;
+        font-size:18px;
+        ">
+        ⭐
+    </div>
+
+
+    <div
+        class="corazon"
+        style="
+        left:60%;
+        animation-duration:13s;
+        animation-delay:1s;
+        font-size:20px;
+        ">
+        ✨
+    </div>
+
+
+    <div
+        class="corazon"
+        style="
+        left:80%;
+        animation-duration:11s;
+        font-size:18px;
+        ">
+        💫
+    </div>
+
+
+    <!-- =========================
+         TARJETA PRINCIPAL
+    ========================= -->
+
+    <div class="tarjeta">
+
+
+        <div class="icono-tarjeta">
+            🌌
+        </div>
+
+
+        <h2>
+            Loyda 🌙
+        </h2>
+
+
+        <p>
+            Bienvenida a este pequeño universo
+            creado especialmente para ti. 🌌
+
+            <br><br>
+
+            Entre tantas estrellas y galaxias,
+            pensé que sería bonito crear un lugar
+            que llevara un poquito de tu luz. ✨
+        </p>
+
+
+        <!-- BOTONES -->
+
+        <div class="botones">
+
+
+            <button
+                class="btn"
+                onclick="mostrarMensaje()">
+
+                💌 Un mensaje para Loyda
+
+            </button>
+
+
+            <button
+                class="btn"
+                onclick="hacerFiesta()">
+
+                ✨ Llenar el cielo de estrellas
+
+            </button>
+
+
+        </div>
+
+
+        <!-- MENSAJE ESPECIAL -->
+
+        <div
+            id="mensaje"
+            class="mensaje">
+
+            Loyda, quería dejarte unas pequeñas
+            palabras dentro de este universo. 🌌💜
+
+            <br><br>
+
+            Eres una persona que merece momentos
+            bonitos, muchas sonrisas y personas que
+            sepan valorar lo especial que eres. ✨
+
+            <br><br>
+
+            Gracias por cada conversación,
+            por cada risa y por todos esos momentos
+            que hacen que los días sean un poco mejores. 🌙
+
+            <br><br>
+
+            Tal vez esta galaxia no sea enorme,
+            pero cada estrella que aparece aquí
+            representa un pequeño detalle pensado
+            especialmente para ti, Loyda. ⭐
+
+            <br><br>
+
+            Así que cuando mires el cielo,
+            recuerda que en algún lugar existe
+            un pequeño universo que lleva tu nombre.
+
+            <br><br>
+
+            ✨ Para Loyda, porque las personas
+            especiales también merecen
+            su propia galaxia. 🌌💜
+
+        </div>
+
+
+    </div>
+
+
+    <!-- TEXTO FINAL -->
+
+    <div class="final">
+
+        Loyda, toca el cielo y deja que
+        las estrellas brillen para ti ✨🌌
+
+    </div>
+
+
+</main>
+
+
+<script>
+
+
+/* =========================
+   ENTRAR A LA GALAXIA
+========================= */
+
+function entrar(){
+
+    const inicio =
+        document.getElementById("inicio");
+
+    inicio.style.opacity="0";
+
+    setTimeout(()=>{
+
+        inicio.style.display="none";
+
+    },1000);
+
+}
+
+
+/* =========================
+   CREAR ESTRELLAS
+========================= */
+
+const estrellas =
+    document.getElementById("estrellas");
+
+
+for(let i=0;i<170;i++){
+
+    const estrella =
+        document.createElement("div");
+
+    estrella.className =
+        "estrella";
+
+
+    const tamaño =
+        Math.random()*3+1;
+
+
+    estrella.style.width =
+        tamaño+"px";
+
+
+    estrella.style.height =
+        tamaño+"px";
+
+
+    estrella.style.left =
+        Math.random()*100+"%";
+
+
+    estrella.style.top =
+        Math.random()*100+"%";
+
+
+    estrella.style.animationDelay =
+        Math.random()*4+"s";
+
+
+    estrella.style.animationDuration =
+        (Math.random()*3+1)+"s";
+
+
+    estrellas.appendChild(estrella);
+
+}
+
+
+/* =========================
+   MOSTRAR MENSAJE
+========================= */
+
+function mostrarMensaje(){
+
+    const mensaje =
+        document.getElementById("mensaje");
+
+    mensaje.classList.toggle("mostrar");
+
+}
+
+
+/* =========================
+   LLENAR EL CIELO
+========================= */
+
+function hacerFiesta(){
+
+    const simbolos =
+    [
+        "✨",
+        "⭐",
+        "💫",
+        "🌟",
+        "💜",
+        "🌌"
+    ];
+
+
+    for(let i=0;i<35;i++){
+
+        const particula =
+            document.createElement("div");
+
+
+        particula.className =
+            "particula";
+
+
+        particula.innerText =
+            simbolos[
+                Math.floor(
+                    Math.random()*simbolos.length
+                )
+            ];
+
+
+        particula.style.left =
+            "50%";
+
+
+        particula.style.top =
+            "50%";
+
+
+        particula.style.setProperty(
+            "--x",
+            (Math.random()*400-200)+"px"
+        );
+
+
+        particula.style.setProperty(
+            "--y",
+            (Math.random()*500-250)+"px"
+        );
+
+
+        document
+        .getElementById("galaxia")
+        .appendChild(particula);
+
+
+        setTimeout(()=>{
+
+            particula.remove();
+
+        },1000);
+
+    }
+
+}
+
+
+/* =========================
+   TOCAR EL CIELO
+========================= */
+
+document
+.getElementById("galaxia")
+.addEventListener(
+    "pointerup",
+    function(e){
+
+
+        if(
+
+            e.target.closest(".tarjeta") ||
+
+            e.target.tagName==="BUTTON"
+
+        ){
+
+            return;
+
+        }
+
+
+        const simbolos =
+        [
+            "✨",
+            "⭐",
+            "💫",
+            "💜"
+        ];
+
+
+        for(let i=0;i<7;i++){
+
+
+            const particula =
+                document.createElement("div");
+
+
+            particula.className =
+                "particula";
+
+
+            particula.innerText =
+                simbolos[
+                    Math.floor(
+                        Math.random()*
+                        simbolos.length
+                    )
+                ];
+
+
+            particula.style.left =
+                e.clientX+"px";
+
+
+            particula.style.top =
+                e.clientY+"px";
+
+
+            particula.style.setProperty(
+                "--x",
+                (Math.random()*120-60)+"px"
+            );
+
+
+            particula.style.setProperty(
+                "--y",
+                (Math.random()*120-60)+"px"
+            );
+
+
+            document
+            .getElementById("galaxia")
+            .appendChild(particula);
+
+
+            setTimeout(()=>{
+
+                particula.remove();
+
+            },1000);
+
+        }
+
+    }
+
+);
+
+</script>
+
+</body>
+</html>
